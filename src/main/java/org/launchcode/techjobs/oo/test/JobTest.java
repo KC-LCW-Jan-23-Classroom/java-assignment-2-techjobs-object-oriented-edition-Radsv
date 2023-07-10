@@ -1,5 +1,6 @@
 package org.launchcode.techjobs.oo.test;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -14,7 +15,7 @@ import static org.junit.Assert.*;
 public class JobTest {
 
     @Test
-    public void testSettingJobID(){
+    public void testSettingJobId(){
         Job job1 = new Job();
         Job job2 = new Job();
         assertNotEquals(job1.getId(), job2.getId());
@@ -59,9 +60,9 @@ public class JobTest {
                 new Location("Desert"), new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
         String test = job6.toString();
-        assertTrue(test.charAt(0) == '\n');
+        Assert.assertEquals(test.charAt(0) , '\n');
         int end = test.length();
-        assertTrue(test.charAt(end - 1) == '\n');
+        Assert.assertEquals(test.charAt(end - 1), '\n');
     }
 
     @Test
